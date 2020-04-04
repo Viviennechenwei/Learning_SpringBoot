@@ -1,0 +1,17 @@
+#server:
+#  port: 8081
+#
+#person:
+#  last-name: Vivienne
+#  age: 18
+#  boss: false
+#  birth: 2020/04/02
+#  myMaps:
+#    k1: v1
+#    k2: v2
+#  myLists:
+#    - L1
+#    - L2
+#  myDog:
+#    name: wangzai
+#    age: 2

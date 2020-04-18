@@ -2,72 +2,47 @@ package com.javalearning;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.*;
+import java.io.PrintStream;
+import java.util.Comparator;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 
 public class MethodReferenceTest {
 
-    BiFunction f;
-    //消费型函数接口测试
+    //对象::实例方法名（非静态方法）
     @Test
-    public void testConsumer(){
-        age(18, a -> System.out.println("my age is: " + a));
+    public void object_method_reference_Test() {
+        PrintStream printStream = System.out; //PrintStream 对象
+        Consumer cs1 = x -> printStream.println(x); //lambda表达式写法
+        cs1.accept("test cs1");
+
+        Consumer cs2 = printStream::println; //当lambda表达式时对象调用实例方法时可用方法引用（对象::实例方法名）
+        cs2.accept("test cs2");
+
+        Consumer cs3 = System.out::println; //合并写法
+        cs3.accept("test cs3");
     }
 
-    public void age(int x, Consumer consumer){
-        consumer.accept(x);
-    }
-
-
-
-    //供给型函数接口测试
     @Test
-    public void testSupplier(){
-        List<Double> list = supplierMethod(10, ()-> Math.random());
-        for (Double i: list){
-            System.out.println(i);
-        }
+    public void class_reference_static_method() {
+        Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
+        /**Compares its two arguments for order. Returns a negative integer,zero,
+         or a positive integer as the first argument is less than, equal to, or greater than the second.
+         **/
+        int res = comparator.compare(3, 3);
+        System.out.println(res);
+
+        Comparator<Integer> comparator1 = Integer::compare;
+        int res1 = comparator1.compare(10, 3);
+        System.out.println(res1);
     }
 
-    //产生指定个数的整数并放入集合中
-    public List<Double> supplierMethod(int num, Supplier<Double> supplier){
-        List<Double> list = new ArrayList<>();
-        for (int i=0; i<num; i++){
-            list.add(supplier.get());
-        }
-        return list;
-    }
-
-    //函数型接口测试
     @Test
-    public void testFunction(){
-        String resStr = strHandler("\t \t Hello Function    ", str->str.trim());
-        System.out.println(resStr);
-    }
+    public void class_reference_method(){
+        BiPredicate<String, String> biPredicate = (x,y)->x.equals(y);
+        System.out.println(biPredicate.test("abc", "abc"));
 
-    public String strHandler(String s, Function<String, String> function){
-        return function.apply(s);
-    }
-
-    //断言型接口测试
-    @Test
-    public void testPercidate(){
-        List<Integer> numList = Arrays.asList(12,130,123,32,45,612,95,100,139);
-        List<Integer> l = filterNum(numList,num->num>100);
-        for(Integer i : l){
-            System.out.println(i);
-        }
-    }
-
-    public List<Integer> filterNum(List<Integer> numList, Predicate<Integer> predicate){
-        List<Integer> resList = new ArrayList<>();
-        for (Integer num : numList){
-            if(predicate.test(num)){
-                resList.add(num);
-            }
-        }
-        return resList;
+        BiPredicate<String, String> biPredicate1 = String::equals;
+        System.out.println(biPredicate1.test("ert", "ert"));
     }
 }

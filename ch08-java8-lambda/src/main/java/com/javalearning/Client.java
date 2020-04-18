@@ -1,10 +1,12 @@
 package com.javalearning;
 
+import java.util.function.Function;
+
 public class Client {
 
     public static void main(String[] args) {
-        TestInterface ti = a -> {return a + 1;};
-        System.out.println(ti.add(2));
+        Function<Integer, Integer> ti = a -> a + 1;
+        System.out.println(ti.apply(2));
     }
 }
 

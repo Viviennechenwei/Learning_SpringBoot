@@ -11,7 +11,7 @@
     <groupId>com.springboot</groupId>
     <artifactId>ch05-springboot-data</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ch05-springboot-data</name>
+    <addressName>ch05-springboot-data</addressName>
     <description>Demo project for Spring Boot</description>
 
     <properties>

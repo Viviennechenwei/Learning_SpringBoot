@@ -11,7 +11,7 @@
     <groupId>com.springboot</groupId>
     <artifactId>ch04-springboot-logging</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ch04-springboot-logging</name>
+    <addressName>ch04-springboot-logging</addressName>
     <description>Demo project for Spring Boot</description>
 
     <properties>

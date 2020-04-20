@@ -47,7 +47,7 @@ public class StreamLearning {
         System.out.println("----------map, sorted---------");
         studentList.stream()
                 .filter(s -> s.getGender() == 'F')
-                //.map(s -> s.getName()) //接收Student的Stream<Student>，返回student的name 的Stream<String>
+                //.map(s -> s.getAddressName()) //接收Student的Stream<Student>，返回student的name 的Stream<String>
                 .map(Student::getName)
                 .distinct()
                 .sorted()

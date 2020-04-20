@@ -11,7 +11,7 @@
     <groupId>com.springboot</groupId>
     <artifactId>ch02-springboot-config-profile</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ch02-springboot-config-profile</name>
+    <addressName>ch02-springboot-config-profile</addressName>
     <description>Demo project for Spring Boot</description>
 
     <properties>

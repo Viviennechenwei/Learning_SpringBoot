@@ -11,7 +11,7 @@
     <groupId>com.springboot</groupId>
     <artifactId>ch03-springboot-auto-config</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ch03-springboot-auto-config</name>
+    <addressName>ch03-springboot-auto-config</addressName>
     <description>Demo project for Spring Boot</description>
 
     <properties>

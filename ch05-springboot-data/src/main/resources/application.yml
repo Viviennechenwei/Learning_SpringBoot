@@ -5,7 +5,7 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://localhost:3306/springlearning?useUnicode=true&characterEncoding=UTF-8&serverTimezone=EST
-    initialization-mode: always #自动建表不生效的话要加这个配置
-    schema:
-      - classpath:test.sql #指定执行的sql语句
-      - classpath:testData.sql
+#    initialization-mode: always #自动建表不生效的话要加这个配置
+#    schema:
+#      - classpath:test.sql #指定执行的sql语句
+#      - classpath:testData.sql

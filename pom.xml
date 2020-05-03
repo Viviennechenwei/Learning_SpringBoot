@@ -13,6 +13,8 @@
         <module>ch06-unitest</module>
         <module>ch07-unittest-mockito</module>
         <module>ch08-java8-lambda</module>
+        <module>ch08-java-learning</module>
+        <module>ch09-java-learning</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

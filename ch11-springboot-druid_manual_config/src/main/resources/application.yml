@@ -39,4 +39,10 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
-
+mybatis:
+  mapper-locations: classpath:/myBatis/mapper/*.xml
+  config-location: classpath:/myBatis/mybatis-config.xml
+#    initialization-mode: always #自动建表不生效的话要加这个配置
+#    schema:
+#      - classpath:sql/department.sql #指定执行的sql语句
+#      - classpath:sql/employee.sql
